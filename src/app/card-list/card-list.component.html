@@ -1,0 +1,9 @@
+<div class="card-list">
+  <p class="card-list__title">{{ card }}</p>
+  <div *ngFor="let cardItem of cardItems">
+    <app-card-item [cardItem]="cardItem"></app-card-item>
+  </div>
+  <button class="card-list__create-card">
+    + Create card
+  </button>
+</div>

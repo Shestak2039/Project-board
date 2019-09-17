@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  padding: 20px 30px;
+
+  &__logo {
+    border: 1px solid black;
+    padding: 10px 30px;
+    font-weight: 600;
+  }
+
+  &__login {
+    outline: 0;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    cursor: pointer;
+    height: 40px;
+  }
+}

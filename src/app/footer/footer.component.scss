@@ -1,0 +1,12 @@
+.footer {
+  border: 1px solid black;
+  padding: 15px 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+
+  &__rights {
+    text-align: right;
+  }
+}

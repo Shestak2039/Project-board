@@ -1,0 +1,14 @@
+.board {
+  display: flex;
+  align-items: center;
+  padding-bottom: 60px;
+
+  &__create-list {
+    background-color: #fff;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+}
