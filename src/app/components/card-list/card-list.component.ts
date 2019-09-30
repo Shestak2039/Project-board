@@ -19,7 +19,9 @@ export class CardListComponent implements OnInit {
 
   public onRemoveCardItem(card: Card) {
     const index = this.card.cards.findIndex((item) => item.id === card.id);
-    this.card.cards.splice(index, 1);
+    if (index !== -1) {
+      this.card.cards.splice(index, 1);
+    }
   }
 
   constructor() { }
