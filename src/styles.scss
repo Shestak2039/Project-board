@@ -4,7 +4,32 @@
   margin: 0;
 }
 
-body {
-  position: relative;
-  min-height: 100vh;
+body, html {
+  height: 100%;
 }
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  app-header {
+    flex: 1 0 auto;
+
+  }
+
+  app-toolbar {
+    flex: 1 0 auto;
+  }
+
+  app-board {
+    flex: 1 0 450px;
+  }
+
+  app-footer {
+    flex: 0 0 auto;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

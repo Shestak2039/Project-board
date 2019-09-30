@@ -1,21 +1,18 @@
 .toolbar {
   margin: 15px 10px;
-  border: 1px solid black;
   padding: 10px 15px;
+  background-color: rgb(48, 48, 48);
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 450px;
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  &__search-field {
-    height: 20px;
-    width: 200px;
-    padding: 5px;
-  }
-
-  &__search-button {
-    margin-left: 10px;
-    box-sizing: border-box;
-    padding: 5px 10px;
-    background-color: #fff;
-    border: 1px solid black;
-    cursor: pointer;
-  }
+.example-full-width {
+  width: 350px;
 }

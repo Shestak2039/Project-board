@@ -1,9 +1,14 @@
-<div class="card-list">
-  <p class="card-list__title">{{ card }}</p>
-  <div *ngFor="let cardItem of cardItems">
-    <app-card-item [cardItem]="cardItem"></app-card-item>
-  </div>
-  <button class="card-list__create-card">
-    + Create card
-  </button>
-</div>
+<mat-card class="card-list">
+  <mat-card-header>
+    <mat-card-title>{{ card.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-card-item class="card-list__done-card" *ngFor="let cardItem of card.cards | filter:searchCriterion"
+      [cardItem]="cardItem" [isDone]="card.isDoneSection" (removeCardItem)="onRemoveCardItem($event)"></app-card-item>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="card-list__create-card" mat-flat-button color="primary">+ Create card</button>
+    <button class="card-list__delete-card" mat-flat-button color="warn" (click)="onRemoveCardList()">Delete
+      Card-List</button>
+  </mat-card-actions>
+</mat-card>

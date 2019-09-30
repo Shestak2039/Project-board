@@ -1,7 +1,25 @@
 .card-item {
-  width: 300px;
-  border: 1px solid black;
+  width: 270px;
   margin: 10px 0px;
   padding: 5px 10px;
-  height: 50px;
+  background: #c2185b;
+  color: #fff;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  min-height: 64px;
+  font: 500 20px/32px Roboto,"Helvetica Neue",sans-serif;
+  cursor: pointer;
+
+  &__text {
+    white-space: normal;
+    margin-top: 25px;
+  }
+
+  &__button-container-edit {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
 }

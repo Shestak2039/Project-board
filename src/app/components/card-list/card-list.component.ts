@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 import CardList from "../../models/CardList";
 import Card from "../../models/Card";
@@ -8,16 +8,21 @@ import Card from "../../models/Card";
   templateUrl: "./card-list.component.html",
   styleUrls: ["./card-list.component.scss"]
 })
-export class CardListComponent implements OnInit, CardList {
-  id: string;
-  name: string;
-  cards: Card[];
+export class CardListComponent implements OnInit {
+  @Input() card: CardList;
+  @Input() searchCriterion: string;
+  @Output() public removeCardList = new EventEmitter<CardList>();
 
-  @Input() card: string;
+  public onRemoveCardList() {
+    this.removeCardList.emit(this.card);
+  }
 
-  cardItems: string[] = ["", "", ""];
+  public onRemoveCardItem(card: Card) {
+    const index = this.card.cards.findIndex((item) => item.id === card.id);
+    this.card.cards.splice(index, 1);
+  }
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

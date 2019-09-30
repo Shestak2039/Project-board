@@ -1,1 +1,20 @@
-<div class="card-item">{{ cardItem }}</div>
+<div class="card-item" (click)="onExpand()" [appDateColor]="cardItem.dueDate" [done]="isDone">
+  <p *ngIf="isDone" [ngStyle]="{'text-decoration': 'line-through'}">{{ cardItem.name }}</p>
+  <p *ngIf="!isDone">{{ cardItem.name }}</p>
+  <ng-container *ngIf="expand">
+    <p class="card-item__text">
+      {{ cardItem.description }}
+    </p>
+    <p class="card-item__text">
+      {{ cardItem.dueDate | date:'medium' }}
+    </p>
+    <p class="card-item__text">
+      {{ cardItem.assignee.firstName + ' ' + cardItem.assignee.lastName }}
+    </p>
+    <div class="card-item__button-container">
+      <button class="card-item__button-container-edit" mat-flat-button color="basic">Edit</button>
+      <button class="card-item__button-container-delete" mat-flat-button color="basic"
+        (click)="onRemoveCardItem()">Delete</button>
+    </div>
+  </ng-container>
+</div>

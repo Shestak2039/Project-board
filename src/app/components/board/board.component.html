@@ -1,6 +1,6 @@
 <section class="board">
-  <div *ngFor="let card of cards">
-    <app-card-list [card]="card"></app-card-list>
-  </div>
-  <button class="board__create-list">+ Create List</button>
+  <app-card-list *ngFor="let card of cards" [card]="card" (removeCardList)="onRemoveCardList($event)"
+    [searchCriterion]="searchCriterion">
+  </app-card-list>
+  <button class="board__create-list" mat-flat-button color="primary">+ Create List</button>
 </section>

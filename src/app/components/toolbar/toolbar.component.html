@@ -1,4 +1,8 @@
 <section class="toolbar">
-  <input type="text" placeholder="Name" class="toolbar__search-field" />
-  <button class="toolbar__search-button">Search</button>
+  <form (submit)="onSearch()">
+    <mat-form-field>
+      <input matInput [(ngModel)]="searchCriterion" name="searchCriterion" placeholder="Search" />
+    </mat-form-field>
+    <button mat-raised-button type="submit">Search</button>
+  </form>
 </section>
