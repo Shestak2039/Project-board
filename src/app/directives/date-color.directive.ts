@@ -11,12 +11,12 @@ export class DateColorDirective implements OnInit {
 
   ngOnInit() {
     const currentDate = new Date();
-    const end = parseInt(`${currentDate.getFullYear()}${currentDate.getMonth()}${currentDate.getDate()}`, 10);
-    const start = parseInt(`${this.appDateColor.getFullYear()}${this.appDateColor.getMonth()}${this.appDateColor.getDate()}`, 10);
+    const end = currentDate.getTime();
+    const start = this.appDateColor.getTime();
 
-    if (end - start < 3 && !this.done) {
+    if ((end - start) / 86400000 < 3 && !this.done) {
       this.renderer2.setStyle(this.elementRef.nativeElement, 'background-color', 'red');
-    } else if (end - start < 7 && !this.done) {
+    } else if ((end - start) / 86400000 < 7 && !this.done) {
       this.renderer2.setStyle(this.elementRef.nativeElement, 'background-color', 'yellow');
     }
   }

@@ -133,7 +133,7 @@ export class BoardComponent implements OnInit {
     },
   ];
 
-  public onRemoveCardList(card: Card) {
+  public onRemoveCardList(card: Card): void {
     const index = this.cards.findIndex((item) => item.id === card.id);
     this.cards.splice(index, 1);
   }

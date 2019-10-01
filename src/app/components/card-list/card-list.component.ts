@@ -13,11 +13,11 @@ export class CardListComponent implements OnInit {
   @Input() searchCriterion: string;
   @Output() public removeCardList = new EventEmitter<CardList>();
 
-  public onRemoveCardList() {
+  public onRemoveCardList(): void {
     this.removeCardList.emit(this.card);
   }
 
-  public onRemoveCardItem(card: Card) {
+  public onRemoveCardItem(card: Card): void {
     const index = this.card.cards.findIndex((item) => item.id === card.id);
     if (index !== -1) {
       this.card.cards.splice(index, 1);

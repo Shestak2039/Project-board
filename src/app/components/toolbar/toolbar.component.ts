@@ -9,7 +9,7 @@ export class ToolbarComponent {
   public searchCriterion: string;
   @Output() public search = new EventEmitter<string>();
 
-  public onSearch() {
+  public onSearch(): void {
     this.search.emit(this.searchCriterion);
   }
 }

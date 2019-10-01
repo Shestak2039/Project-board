@@ -15,11 +15,11 @@ export class CardItemComponent implements OnInit {
 
   public expand = false;
 
-  public onExpand() {
+  public onExpand(): void {
     this.expand ? this.expand = false : this.expand = true;
   }
 
-  public onRemoveCardItem() {
+  public onRemoveCardItem(): void {
     this.removeCardItem.emit(this.cardItem);
   }
 
